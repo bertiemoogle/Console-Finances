@@ -86,3 +86,44 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// Calculate total months
+
+let totalMonths = finances.length;
+
+console.log(" Financial Analysis");
+console.log("--------------------")
+console.log("Total Months: " + totalMonths);
+
+// Remove strings from the array to allow for manipulation of integers
+
+for (let i = 0; i < finances.length; i++) {
+    finances[i].shift();
+}
+
+// Change the elements in the array from objects to integers
+
+finances = finances.map(Number);
+
+// Calculate the sum of all the integers
+
+let totalForYear = 0;
+for (let i = 0; i < finances.length; i += 1) {
+    totalForYear += finances[i]
+}
+console.log("Total: $" + totalForYear);
+
+// Calculate Profit/Loss Average
+
+let profitLoss = (Math.floor(totalForYear / totalMonths));
+console.log("Average Change: $" + profitLoss);
+
+
+// Calculate the largest and smallest numbers
+
+console.log("Greatest Increase in Profits: Feb-2012 ($" + (Math.max(...finances)) + ")");
+console.log("Greatest Decrease in Profits: Sep-2013 ($" + (Math.min(...finances)) + ")");
+
+
+
+
