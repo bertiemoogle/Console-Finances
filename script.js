@@ -111,34 +111,35 @@ for (let i = 0; i < finances.length; i += 1) {
 
 console.log("Total: $" + totalForYear);
 
-// let totalForYear = 0;
-// for (let i = 0; i < finances.length; i += 1) {
-//     totalForYear += finances[i]
-// }
-// console.log("Total: $" + totalForYear);
+// Calculate the average of the changes in profit/loss
+
+let newArray = [];
+let diff = 0;
+let sum = 0;
+for (let i = 1; i < finances.length-1; i++) {
+            diff = finances[i][1] - finances[i-1][1];
+            console.log(diff);
+            newArray.push(diff);
+        }
+        
+console.log(newArray);
+console.log("Array Length: " + newArray.length);
+
+for (i = 0; i < newArray.length; i++) {
+    sum += newArray[i];
+    console.log(sum);
+}
+        
+
+        
+
+
+
+
+
 
 // Calculate the largest profit and largest loss over the period
 
 
 // Calculate Profit/Loss Average
-
-
-
-
-
-
-// for (let i = 1; i < finances.length; i += 1) {
-//     let item1 = finances[i - 1];
-//     let item2 = finances[i];
-//     if (item1 > item2) {
-//         let diff = (item1 - item2);
-//         console.log(diff);
-//     }
-// }
-
-
-
-
-
-
 
